@@ -21,8 +21,7 @@ export default function Form({ handleSubmit }) {
     };
   }, [errorMessage]);
 
-  const handleChange = ({ target }) => {
-    const { value } = target;
+  const handleChange = ({ target: { value } }) => {
     setValue(value);
   };
 
