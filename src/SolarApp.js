@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import ResultFields from 'components/ResultFields/ResultFields';
+import quickSort from 'utils/quickSort';
 import { Timer } from 'components/Timer';
 import { TIME_FORMAT } from 'constants/timeFormat';
 import styled from '@emotion/styled';
@@ -10,7 +11,8 @@ export default function SolarApp() {
   const [sorted, setSorted] = useState('');
 
   const handleSubmit = value => {
-    setSorted(value);
+    // TODO: validation
+    setSorted(quickSort(value));
   };
 
   return (
