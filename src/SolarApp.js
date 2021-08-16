@@ -1,6 +1,7 @@
 import './App.css';
-import ResultFields from './components/ResultFields/ResultFields';
-import Timer from './components/Timer/Timer';
+import ResultFields from 'components/ResultFields/ResultFields';
+import { Timer } from 'components/Timer';
+import { TIME_FORMAT } from 'constants/timeFormat';
 import styled from '@emotion/styled';
 
 const SolarAppContainer = styled.div({
@@ -20,7 +21,7 @@ function SolarApp() {
   // NOTE: getKST() {KST} -> format함수 (return `선데이 21 ,~~~)
   return (
     <SolarAppContainer className="test">
-      {/* <Timer /> */}
+      <Timer format={TIME_FORMAT.KO} />
       {/* <Form onSubmit={handleSubmit}> */}
       {/* <Input value={value} />  */}
       {/* Button */}
@@ -29,6 +30,7 @@ function SolarApp() {
       {/* <ResultFields value={sorted} /> */}
       <ResultFields value={[1, 2, 3, 4]} />
       {/* <Timer locale={kor | en} type={ko-KR | en-US} /> */}
+      <Timer format={TIME_FORMAT.EN} />
     </SolarAppContainer>
   );
 }
