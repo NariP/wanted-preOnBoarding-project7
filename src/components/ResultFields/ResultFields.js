@@ -1,18 +1,15 @@
+import styled from '@emotion/styled';
 import React, { useEffect, useState } from 'react';
 import ResultField from './ResultField/ResultField.js';
 
 export default function ResultFields({ value }) {
-  // NOTE: 3초 뒤에 띄어야한다.
   const [reversedValue, setReversedValue] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
-
-  // NOTE: isLoading 을 어디다 사용할 것인가?
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // NOTE: 함수로 뺄까?
+    if (!value) return;
     setIsLoading(true);
 
-    // return clear 하는거까지
     const timer = setTimeout(() => {
       setReversedValue([...value].reverse());
       setIsLoading(false);
@@ -24,10 +21,14 @@ export default function ResultFields({ value }) {
   }, [value]);
 
   return (
-    <div>
-      <ResultField value={value} className="a" />
-      {isLoading && <div>Loading</div>}
-      {!isLoading && <ResultField value={reversedValue} />}
-    </div>
+    <StyledResultFields>
+      <ResultField value={value} color="#f3e5f5" />
+      <ResultField loading={isLoading} value={reversedValue} color="#e8eaf6" />
+    </StyledResultFields>
   );
 }
+
+const StyledResultFields = styled.div({
+  width: 450,
+  margin: 'auto',
+});

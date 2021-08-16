@@ -17,6 +17,7 @@ const reset = css`
   button {
     border: none;
     background: none;
+    cursor: pointer;
   }
   em {
     font-style: normal;
