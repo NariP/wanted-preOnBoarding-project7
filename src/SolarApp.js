@@ -10,10 +10,7 @@ export default function SolarApp() {
   const [sorted, setSorted] = useState('');
 
   const handleSubmit = value => {
-    const temp = value.split(',');
-    // TODO: validation
-    // TODO: sort
-    setSorted(temp.sort((a, b) => +a - +b));
+    setSorted(value);
   };
 
   return (
