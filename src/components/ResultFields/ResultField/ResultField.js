@@ -1,9 +1,14 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import LoadingSpinner from 'components/LoadingSpinner/LoadingSpinner.js';
 
 export default function ResultField({ value, color, loading }) {
   if (loading) {
-    return <StyledResultField color={color}>loading..</StyledResultField>;
+    return (
+      <StyledResultField color={color}>
+        <LoadingSpinner />
+      </StyledResultField>
+    );
   }
   return (
     <StyledResultField color={color}>
