@@ -18,7 +18,7 @@ export default function Form({ handleSubmit }) {
 
   return (
     <StyledForm onSubmit={onSubmit}>
-      <Input value={value} onChange={handleChange} />
+      <Input required value={value} onChange={handleChange} />
       <Button type="submit">시작</Button>
     </StyledForm>
   );
@@ -26,6 +26,6 @@ export default function Form({ handleSubmit }) {
 
 const StyledForm = styled.form({
   margin: 'auto',
-  width: 450,
+  width: '100%',
   backgroundColor: 'white',
 });

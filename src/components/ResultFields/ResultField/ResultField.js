@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 
 export default function ResultField({ value, color, loading }) {
   if (loading) {
-    <StyledResultField color={color}>loading..</StyledResultField>;
+    return <StyledResultField color={color}>loading..</StyledResultField>;
   }
   return (
     <StyledResultField color={color}>

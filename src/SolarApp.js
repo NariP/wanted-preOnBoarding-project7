@@ -28,8 +28,8 @@ export default function SolarApp() {
 
 const SolarAppContainer = styled.div({
   textAlign: 'center',
-  margin: 'auto',
-  height: '100vh',
+  margin: '100px auto',
   width: 600,
-  backgroundColor: '#ffebee',
+  borderRadius: 20,
+  boxShadow: '5px 5px 15px 5px #fce4ec',
 });

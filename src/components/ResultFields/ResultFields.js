@@ -4,7 +4,7 @@ import ResultField from './ResultField/ResultField.js';
 
 export default function ResultFields({ value }) {
   const [reversedValue, setReversedValue] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (!value) return;
@@ -29,6 +29,6 @@ export default function ResultFields({ value }) {
 }
 
 const StyledResultFields = styled.div({
-  width: 450,
+  width: '100%',
   margin: 'auto',
 });

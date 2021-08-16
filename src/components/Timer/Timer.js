@@ -15,10 +15,10 @@ export default function Timer({ format }) {
   return <StyledDiv>{currentTime}</StyledDiv>;
 }
 const StyledDiv = styled.div({
-  background: '#037e8f',
+  background: '#FCF6F5',
   padding: '1em',
   fontFamily: 'NanumSquareRound, sans-serif',
   fontSize: '2em',
   fontWeight: 800,
-  color: 'white',
+  color: '#7b9acc',
 });
