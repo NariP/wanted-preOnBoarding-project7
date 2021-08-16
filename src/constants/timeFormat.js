@@ -1,1 +1,1 @@
-export const TIME_FORMAT = { KO: 'KO', EN: 'EN' };
+export const TIME_FORMAT = { KO: 'kr-KO', EN: 'en-US' };
