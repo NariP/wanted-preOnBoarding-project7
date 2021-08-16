@@ -10,7 +10,7 @@ export default function Timer({ format }) {
   // NOTE: FullYear, month, date, day
   // const time = locale, format 에 따른 시간 처리하고...
 
-  const currentTime = getFormattedTime[format]();
+  const currentTime = getFormattedTime(format);
 
   return <StyledDiv>{currentTime}</StyledDiv>;
 }

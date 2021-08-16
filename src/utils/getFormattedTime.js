@@ -1,18 +1,16 @@
 import getKST from './getKST';
-import MONTHS from 'constants/months';
-import WEEK from 'constants/week';
+import { TIME_FORMAT } from 'constants/timeFormat';
 
-const getFormattedTime = {
-  today: getKST(),
-  KO() {
-    return `${this.today.year}년 ${this.today.month + 1}월 ${
-      this.today.date
-    }일 ${WEEK['KO'][this.today.day]}`;
-  },
-  EN() {
-    return `${WEEK['EN'][this.today.day]} ${MONTHS[this.today.month]} ${
-      this.today.date
-    }, ${this.today.year}`;
-  },
+const getFormattedTime = format => {
+  const options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
+  const formattedKST = getKST().toLocaleDateString(format, options);
+  return format === TIME_FORMAT['EN']
+    ? formattedKST.replace(',', '')
+    : formattedKST;
 };
 export default getFormattedTime;
