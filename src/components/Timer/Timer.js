@@ -1,8 +1,8 @@
 import React from 'react';
-import WEEK from 'constants/week';
-import getKST from 'utils/getKST';
+import getFormattedTime from 'utils/getFormattedTime';
+import styled from '@emotion/styled';
 
-// NOTE: format: ko-KR, eu-EU
+// NOTE: format: KO, EN
 export default function Timer({ format }) {
   // 1초 간격으로 보여주는걸까?
   // NOTE: state는 없이
@@ -10,12 +10,15 @@ export default function Timer({ format }) {
   // NOTE: FullYear, month, date, day
   // const time = locale, format 에 따른 시간 처리하고...
 
-  // const getEnFormat = () => {
-  //   const today = getKST();
-  //   console.log(today.day);
-  //   return `${WEEK['EN'][+today.day]} ${today.month} ${today.date}, ${
-  //     today.year
-  //   }`;
-  // };
-  return <div>구경하시죠</div>;
+  const currentTime = getFormattedTime[format]();
+
+  return <StyledDiv>{currentTime}</StyledDiv>;
 }
+const StyledDiv = styled.div({
+  background: '#037e8f',
+  padding: '1em',
+  fontFamily: 'NanumSquareRound, sans-serif',
+  fontSize: '2em',
+  fontWeight: 800,
+  color: 'white',
+});

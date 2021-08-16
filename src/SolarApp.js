@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
-import ResultFields from './components/ResultFields/ResultFields';
-import Timer from './components/Timer/Timer';
+import ResultFields from 'components/ResultFields/ResultFields';
+import { Timer } from 'components/Timer';
+import { TIME_FORMAT } from 'constants/timeFormat';
 import styled from '@emotion/styled';
 import Form from 'components/Form/Form.js';
 
@@ -16,9 +17,11 @@ export default function SolarApp() {
   };
 
   return (
-    <SolarAppContainer className="test">
+    <SolarAppContainer>
+      <Timer format={TIME_FORMAT.KO} />
       <Form handleSubmit={handleSubmit} />
       <ResultFields value={sorted} />
+      <Timer format={TIME_FORMAT.EN} />
     </SolarAppContainer>
   );
 }
