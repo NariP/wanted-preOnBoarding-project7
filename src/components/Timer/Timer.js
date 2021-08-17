@@ -1,6 +1,6 @@
 import React from 'react';
-import getFormattedTime from 'utils/getFormattedTime';
 import styled from '@emotion/styled';
+import { getFormattedTime } from 'utils';
 
 // NOTE: format: KO, EN
 export default function Timer({ format }) {

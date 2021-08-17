@@ -1,4 +1,4 @@
-const stringToArr = val => {
+const makeStringToNumberArr = val => {
   return val
     .split(',')
     .filter(v => v.trim())
@@ -6,4 +6,4 @@ const stringToArr = val => {
     .filter(v => !isNaN(v));
 };
 
-export default stringToArr;
+export default makeStringToNumberArr;
