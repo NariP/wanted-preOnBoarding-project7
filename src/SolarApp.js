@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import ResultFields from 'components/ResultFields/ResultFields';
-import quickSort from 'utils/quickSort';
-import { Timer } from 'components/Timer';
-import { TIME_FORMAT } from 'constants/timeFormat';
 import styled from '@emotion/styled';
-import Form from 'components/Form/Form.js';
+import { quickSort } from 'utils';
+import { TIME_FORMAT } from 'utils/constants';
+import { ResultFields } from 'components/ResultFields';
+import { Timer } from 'components/Timer';
+import { Form } from 'components/Form';
 
 export default function SolarApp() {
   const [sorted, setSorted] = useState('');

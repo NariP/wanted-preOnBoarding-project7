@@ -1,5 +1,5 @@
 import getKST from './getKST';
-import { TIME_FORMAT } from 'constants/timeFormat';
+import { TIME_FORMAT } from 'utils/constants';
 
 const getFormattedTime = format => {
   const options = {

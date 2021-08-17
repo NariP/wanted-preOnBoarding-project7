@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import LoadingSpinner from 'components/LoadingSpinner/LoadingSpinner.js';
+import { LoadingSpinner } from 'components/LoadingSpinner';
 
 export default function ResultField({ value, color, loading }) {
   if (loading) {

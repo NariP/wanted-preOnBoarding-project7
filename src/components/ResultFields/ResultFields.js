@@ -1,6 +1,6 @@
-import styled from '@emotion/styled';
 import React, { useEffect, useState } from 'react';
-import ResultField from './ResultField/ResultField.js';
+import styled from '@emotion/styled';
+import { ResultField } from './ResultField';
 
 export default function ResultFields({ value }) {
   const [reversedValue, setReversedValue] = useState(null);

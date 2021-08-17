@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
-import Button from 'components/Button/Button';
-import Input from 'components/Input/Input.js';
-import checkInputValiation from 'utils/checkInputValidation';
-import { INPUT_ERROR_MESSAGE } from 'constants/validityMessage.js';
 import { keyframes } from '@emotion/react';
-import stringToArr from 'utils/stringToArr.js';
+import { Button } from 'components/Button';
+import { Input } from 'components/Input';
+import { checkInputValidation, stringToArr } from 'utils';
+import { INPUT_ERROR_MESSAGE } from 'utils/constants/index';
 
 export default function Form({ handleSubmit }) {
   const [value, setValue] = useState('');
@@ -27,7 +26,7 @@ export default function Form({ handleSubmit }) {
 
   const onSubmit = e => {
     e.preventDefault();
-    if (!checkInputValiation(value)) {
+    if (!checkInputValidation(value)) {
       setErrorMessage(INPUT_ERROR_MESSAGE);
       return;
     }
