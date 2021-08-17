@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
 import { Button } from 'components/Button';
 import { Input } from 'components/Input';
-import { checkInputValidation, stringToArr } from 'utils';
+import { checkInputValidation, makeStringToNumberArr } from 'utils';
 import { INPUT_ERROR_MESSAGE } from 'utils/constants/index';
 
 export default function Form({ handleSubmit }) {
@@ -27,7 +27,7 @@ export default function Form({ handleSubmit }) {
   const onSubmit = e => {
     e.preventDefault();
     checkInputValidation(value)
-      ? handleSubmit(stringToArr(value))
+      ? handleSubmit(makeStringToNumberArr(value))
       : setErrorMessage(INPUT_ERROR_MESSAGE);
   };
 
