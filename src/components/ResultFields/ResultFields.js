@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
+import { TIMER } from 'utils/constants';
 import { ResultField } from './ResultField';
 
 export default function ResultFields({ value }) {
@@ -13,7 +14,7 @@ export default function ResultFields({ value }) {
     const timer = setTimeout(() => {
       setReversedValue([...value].reverse());
       setIsLoading(false);
-    }, 3000);
+    }, TIMER.POPUP);
 
     return () => {
       clearTimeout(timer);

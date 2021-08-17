@@ -19,4 +19,6 @@ const StyledResultField = styled.span(({ isDisplay, theme }) => ({
   fontSize: '1.5em',
   backgroundColor: theme.colors.base,
   borderBottom: '1px solid rgba(0,0,0,.2)',
+  maxHeight: 200,
+  overflowY: 'scroll',
 }));
