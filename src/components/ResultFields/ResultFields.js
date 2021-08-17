@@ -22,12 +22,8 @@ export default function ResultFields({ value }) {
   }, [value]);
   return (
     <StyledResultFields>
-      <ResultField value={value.join(', ')} color="#f3e5f5" />
-      <ResultField
-        loading={isLoading}
-        value={reversedValue.join(', ')}
-        color="#e8eaf6"
-      />
+      <ResultField value={value.join(', ')} />
+      <ResultField loading={isLoading} value={reversedValue.join(', ')} />
     </StyledResultFields>
   );
 }

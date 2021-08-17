@@ -2,18 +2,21 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { LoadingSpinner } from 'components/LoadingSpinner';
 
-export default function ResultField({ value, color, loading }) {
+export default function ResultField({ value, loading, theme }) {
+  const isDisplay = value || loading;
   return (
-    <StyledResultField color={color}>
+    <StyledResultField isDisplay={isDisplay} theme={theme}>
       {!loading ? value : <LoadingSpinner />}
     </StyledResultField>
   );
 }
 
-const StyledResultField = styled.span(({ color }) => ({
-  display: 'block',
+const StyledResultField = styled.span(({ isDisplay, theme }) => ({
+  display: isDisplay ? 'block' : 'none',
   width: '100%',
   margin: 'auto',
-  fontSize: 20,
-  backgroundColor: color || '#e1bee7',
+  padding: '.5em',
+  fontSize: '1.5em',
+  backgroundColor: theme.colors.base,
+  borderBottom: '1px solid rgba(0,0,0,.2)',
 }));
