@@ -7,7 +7,7 @@ import { Timer } from 'components/Timer';
 import { Form } from 'components/Form';
 
 export default function SolarApp() {
-  const [sorted, setSorted] = useState('');
+  const [sorted, setSorted] = useState([]);
 
   const handleSubmit = value => {
     setSorted(quickSort(value));

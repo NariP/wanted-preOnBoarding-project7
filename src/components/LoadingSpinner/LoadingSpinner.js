@@ -5,10 +5,10 @@ import { keyframes } from '@emotion/react';
 export default function LoadingSpinner() {
   return (
     <StyledLoadingSpinner className="lds-ellipsis">
-      <Wave></Wave>
-      <Wave></Wave>
-      <Wave></Wave>
-      <Wave></Wave>
+      <Wave />
+      <Wave />
+      <Wave />
+      <Wave />
     </StyledLoadingSpinner>
   );
 }
@@ -44,19 +44,19 @@ const StyledLoadingSpinner = styled.div({
   width: 80,
   height: 40,
 
-  '& div:nth-child(1)': {
+  '& div:nth-of-type(1)': {
     left: 8,
     animation: `${ldsEllipsis1} 0.6s infinite`,
   },
-  '& div:nth-child(2)': {
+  '& div:nth-of-type(2)': {
     left: 8,
     animation: `${ldsEllipsis2} 0.6s infinite`,
   },
-  '& div:nth-child(3)': {
+  '& div:nth-of-type(3)': {
     left: 32,
     animation: `${ldsEllipsis2} 0.6s infinite`,
   },
-  '& div:nth-child(4)': {
+  '& div:nth-of-type(4)': {
     left: 56,
     animation: `${ldsEllipsis3} 0.6s infinite`,
   },

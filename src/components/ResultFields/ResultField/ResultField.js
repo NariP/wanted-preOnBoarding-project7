@@ -3,24 +3,17 @@ import styled from '@emotion/styled';
 import { LoadingSpinner } from 'components/LoadingSpinner';
 
 export default function ResultField({ value, color, loading }) {
-  if (loading) {
-    return (
-      <StyledResultField color={color}>
-        <LoadingSpinner />
-      </StyledResultField>
-    );
-  }
   return (
     <StyledResultField color={color}>
-      {value ? value.join(', ') : ''}
+      {!loading ? value : <LoadingSpinner />}
     </StyledResultField>
   );
 }
 
-const StyledResultField = styled.p(({ color }) => ({
+const StyledResultField = styled.span(({ color }) => ({
+  display: 'block',
   width: '100%',
   margin: 'auto',
   fontSize: 20,
-  // height: 30,
   backgroundColor: color || '#e1bee7',
 }));
