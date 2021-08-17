@@ -4,7 +4,7 @@ import { keyframes } from '@emotion/react';
 import { Button } from 'components/Button';
 import { Input } from 'components/Input';
 import { checkInputValidation, makeStringToNumberArr } from 'utils';
-import { INPUT_ERROR_MESSAGE, TIMER } from 'utils/constants/index';
+import { TIMER } from 'utils/constants/index';
 
 export default function Form({ handleSubmit }) {
   const [value, setValue] = useState('');
@@ -26,9 +26,10 @@ export default function Form({ handleSubmit }) {
 
   const onSubmit = e => {
     e.preventDefault();
-    checkInputValidation(value)
-      ? handleSubmit(makeStringToNumberArr(value))
-      : setErrorMessage(INPUT_ERROR_MESSAGE);
+    const validationResult = checkInputValidation(value);
+    !!validationResult
+      ? setErrorMessage(validationResult)
+      : handleSubmit(makeStringToNumberArr(value));
   };
 
   return (
