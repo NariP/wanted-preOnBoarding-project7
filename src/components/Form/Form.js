@@ -4,7 +4,7 @@ import { keyframes } from '@emotion/react';
 import { Button } from 'components/Button';
 import { Input } from 'components/Input';
 import { checkInputValidation, makeStringToNumberArr } from 'utils';
-import { INPUT_ERROR_MESSAGE } from 'utils/constants/index';
+import { INPUT_ERROR_MESSAGE, TIMER } from 'utils/constants/index';
 
 export default function Form({ handleSubmit }) {
   const [value, setValue] = useState('');
@@ -14,7 +14,7 @@ export default function Form({ handleSubmit }) {
     if (!errorMessage) return;
     const timer = setTimeout(() => {
       setErrorMessage('');
-    }, 3000);
+    }, TIMER.LOADING);
     return () => {
       clearTimeout(timer);
     };
