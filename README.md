@@ -7,7 +7,13 @@
 > CRA로 프로젝트를 구성했습니다.
 
 ```
-npm install && npm run
+npm install && npm run start
+```
+
+### 테스트
+
+```
+npm run test
 ```
 
 ## Members
@@ -32,8 +38,13 @@ npm install && npm run
 ### 과제구현 목록
 - [x] 타이머 구현
 - [x] 정렬 알고리즘 구현
+  - [x] 퀵소트 
 - [x] 기본 레이아웃 작성
 - [x] 예외처리
+  - [x] Number.[MAX-MIN]_SAFE_INTEGER 범위 벗어나는 경우
+  - [x] 숫자 아닌 값
+  - [x] 연속으로 입력된 `,`
+- [x] 유틸함수 테스트 코드 작성 
 
 ## 정렬 알고리즘 참고한 링크
 
