@@ -28,5 +28,6 @@ const SolarAppContainer = styled.div({
   margin: '100px auto',
   width: 600,
   borderRadius: 20,
-  boxShadow: '5px 5px 15px 5px #fce4ec',
+  overflow: 'hidden',
+  boxShadow: '2px 2px 7px 2px #e8d6d3',
 });

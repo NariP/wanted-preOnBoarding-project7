@@ -2,9 +2,9 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
 
-export default function LoadingSpinner() {
+export default function LoadingSpinner({ theme }) {
   return (
-    <StyledLoadingSpinner className="lds-ellipsis">
+    <StyledLoadingSpinner className="lds-ellipsis" theme={theme}>
       <Wave />
       <Wave />
       <Wave />
@@ -62,12 +62,12 @@ const StyledLoadingSpinner = styled.div({
   },
 });
 
-const Wave = styled.div({
+const Wave = styled.div(({ theme }) => ({
   position: 'absolute',
   top: 15,
   width: 13,
   height: 13,
   borderRadius: '50%',
-  background: '#fff',
+  background: theme.colors.point,
   animationTimingFunction: 'cubic-bezier(0, 1, 1, 0)',
-});
+}));

@@ -2,23 +2,15 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { getFormattedTime } from 'utils';
 
-// NOTE: format: KO, EN
-export default function Timer({ format }) {
-  // 1초 간격으로 보여주는걸까?
-  // NOTE: state는 없이
-  // NOTE: 과제에는 요일까지 밖에 없으므로 시간, 분, 초는 하지말자. 나중에 시간 남으면 하자.
-  // NOTE: FullYear, month, date, day
-  // const time = locale, format 에 따른 시간 처리하고...
-
+export default function Timer({ format, theme }) {
   const currentTime = getFormattedTime(format);
-
-  return <StyledDiv>{currentTime}</StyledDiv>;
+  return <StyledDiv theme={theme}>{currentTime}</StyledDiv>;
 }
-const StyledDiv = styled.div({
-  background: '#FCF6F5',
+
+const StyledDiv = styled.div(({ theme }) => ({
+  background: theme.colors.base,
   padding: '1em',
-  fontFamily: 'NanumSquareRound, sans-serif',
   fontSize: '2em',
   fontWeight: 800,
-  color: '#7b9acc',
-});
+  color: theme.colors.point,
+}));

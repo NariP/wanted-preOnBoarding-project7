@@ -68,4 +68,5 @@ const StyledErrorMessage = styled.p({
   color: '#f06292',
   fontSize: 15,
   animation: `${fadeInOut} 3s forwards`,
+  paddingBottom: '.7em',
 });
