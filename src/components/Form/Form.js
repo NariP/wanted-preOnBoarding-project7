@@ -27,16 +27,14 @@ export default function Form({ handleSubmit }) {
 
   const onSubmit = e => {
     e.preventDefault();
-    if (!checkInputValiation(value)) {
-      setErrorMessage(INPUT_ERROR_MESSAGE);
-      return;
-    }
-    handleSubmit(stringToArr(value));
+    checkInputValiation(value)
+      ? handleSubmit(stringToArr(value))
+      : setErrorMessage(INPUT_ERROR_MESSAGE);
   };
 
   return (
     <StyledForm onSubmit={onSubmit}>
-      <Input required value={value} onChange={handleChange} />
+      <Input value={value} onChange={handleChange} />
       {!!errorMessage && (
         <StyledErrorMessage>{errorMessage}</StyledErrorMessage>
       )}
