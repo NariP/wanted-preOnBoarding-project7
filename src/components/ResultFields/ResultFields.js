@@ -3,11 +3,11 @@ import React, { useEffect, useState } from 'react';
 import ResultField from './ResultField/ResultField.js';
 
 export default function ResultFields({ value }) {
-  const [reversedValue, setReversedValue] = useState(null);
+  const [reversedValue, setReversedValue] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    if (!value) return;
+    if (!value.length) return;
     setIsLoading(true);
 
     const timer = setTimeout(() => {
@@ -19,11 +19,14 @@ export default function ResultFields({ value }) {
       clearTimeout(timer);
     };
   }, [value]);
-
   return (
     <StyledResultFields>
-      <ResultField value={value} color="#f3e5f5" />
-      <ResultField loading={isLoading} value={reversedValue} color="#e8eaf6" />
+      <ResultField value={value.join(', ')} color="#f3e5f5" />
+      <ResultField
+        loading={isLoading}
+        value={reversedValue.join(', ')}
+        color="#e8eaf6"
+      />
     </StyledResultFields>
   );
 }

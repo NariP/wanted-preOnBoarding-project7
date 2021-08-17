@@ -7,7 +7,7 @@ import styled from '@emotion/styled';
 import Form from 'components/Form/Form.js';
 
 export default function SolarApp() {
-  const [sorted, setSorted] = useState('');
+  const [sorted, setSorted] = useState([]);
 
   const handleSubmit = value => {
     setSorted(quickSort(value));
