@@ -1,7 +1,7 @@
 const stringToArr = val => {
   return val
     .split(',')
-    .filter(v => v)
+    .filter(v => v.trim())
     .map(v => +v)
     .filter(v => !isNaN(v));
 };
